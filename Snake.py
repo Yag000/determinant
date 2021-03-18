@@ -159,7 +159,7 @@ def change():
         if i == 0:
             if x1%10 == 0 and y1%10 == 0:
                 break
-    manzana(x1,y1)
+    apple(x1,y1)
     aumento()
 
 def restart():
