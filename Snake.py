@@ -29,7 +29,8 @@ def movI(event):
     if h == 0:
         move()
     h=1
-def inicio(x,y):
+    
+def start(x,y):
     global man
 
     man[0]=can1.create_rectangle(x+3,y,x+8,y,fill='red',outline='red')
@@ -92,10 +93,12 @@ def rainbowI():
     rai[8]=can1.create_rectangle(raix+2,raiy+8,raix+9,raiy+8,fill='violet',outline='violet')
     rai[9]=can1.create_rectangle(raix+3,raiy+9,raix+8,raiy+9,fill='blue',outline='blue')
     rai[10]=can1.create_rectangle(raix+5,raiy,raix+6,raiy-4,fill='brown',outline='brown')
+    
 def Power():
     global power
     power =0
     root.after(randrange(10000,30000),rainbow)
+    
 def rainbowC():
     global raiy,raix,power,rai,ca
     while 1:
@@ -120,7 +123,7 @@ def rainbowC():
     colorC()
     root.after(8000,Power) 
 
-def manzana(x,y):
+def apple(x,y):
     global man
     can1.coords(man[0],x+3,y,x+8,y)
     can1.coords(man[1],x+2,y+1,x+9,y+1)
@@ -132,7 +135,7 @@ def manzana(x,y):
     can1.coords(man[7],x+5,y,x+6,y-2)
  
 
-def arbol(x,y):
+def arbre(x,y):
     can1.create_rectangle(x,y,x+20*0.3,y-40*0.3,fill='brown',outline='brown')
     can1.create_rectangle(x-20*0.3,y-40*0.3,x+40*0.3,y-50*0.3,fill='green',outline='green')
     can1.create_rectangle(x-30*0.3,y-50*0.3,x+50*0.3,y-70*0.3,fill='green',outline='green')
@@ -159,7 +162,7 @@ def change():
     manzana(x1,y1)
     aumento()
 
-def reinicio():
+def restart():
     global m,x,y,cu,z,h,q,u,m,p,xt,yt,x1,y1,bu,can1
 
     m.pack_forget()    
@@ -189,10 +192,10 @@ def reinicio():
         if i == 0:
             if x1%10 == 0 and y1%10 == 0:
                 break
-    arbol(450,100)
-    arbol(470,400)
-    arbol(150,500)
-    inicio(x1,y1)
+    arbre(450,100)
+    arbre(470,400)
+    arbre(150,500)
+    start(x1,y1)
 
 
 def aumento():
@@ -285,7 +288,7 @@ def move():
         can1.pack_forget()
         m=Message(root,text='GAME OVER',font=('times',60,'bold'),bg='light blue',fg='red')
         m.pack()
-        bu=Button(root,text='Restart',command=reinicio)
+        bu=Button(root,text='Restart',command=restart)
         bu.pack()
     i = 0
     can1.coords(cu[0],x[0],y[0],x[0]+10,y[0]+10)
@@ -338,11 +341,11 @@ cu[0]=can1.create_rectangle(x[0],y[0],x[0]+10,y[0]+10,fill='green',outline='gree
 
 
 
-inicio(x1,y1)
+start(x1,y1)
 
-arbol(450,100)
-arbol(470,400)
-arbol(150,500)
+arbre(450,100)
+arbre(470,400)
+arbre(150,500)
  
 root.bind('<Up>',movA)
 root.bind('<Down>',movB)
