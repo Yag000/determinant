@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+Tkinter is needed
+@author: Yago
+"""
+
 from tkinter import *
 from random import randrange
 
@@ -94,7 +100,7 @@ def rainbowI():
     rai[9]=can1.create_rectangle(raix+3,raiy+9,raix+8,raiy+9,fill='blue',outline='blue')
     rai[10]=can1.create_rectangle(raix+5,raiy,raix+6,raiy-4,fill='brown',outline='brown')
     
-def Power():
+def power():
     global power
     power =0
     root.after(randrange(10000,30000),rainbow)
@@ -121,7 +127,7 @@ def rainbowC():
         i+=1
     power=1
     colorC()
-    root.after(8000,Power) 
+    root.after(8000,power) 
 
 def apple(x,y):
     global man
@@ -135,7 +141,7 @@ def apple(x,y):
     can1.coords(man[7],x+5,y,x+6,y-2)
  
 
-def arbre(x,y):
+def tree(x,y):
     can1.create_rectangle(x,y,x+20*0.3,y-40*0.3,fill='brown',outline='brown')
     can1.create_rectangle(x-20*0.3,y-40*0.3,x+40*0.3,y-50*0.3,fill='green',outline='green')
     can1.create_rectangle(x-30*0.3,y-50*0.3,x+50*0.3,y-70*0.3,fill='green',outline='green')
@@ -160,7 +166,7 @@ def change():
             if x1%10 == 0 and y1%10 == 0:
                 break
     apple(x1,y1)
-    aumento()
+    increase()
 
 def restart():
     global m,x,y,cu,z,h,q,u,m,p,xt,yt,x1,y1,bu,can1
@@ -192,13 +198,13 @@ def restart():
         if i == 0:
             if x1%10 == 0 and y1%10 == 0:
                 break
-    arbre(450,100)
-    arbre(470,400)
-    arbre(150,500)
+    tree(450,100)
+    tree(470,400)
+    tree(150,500)
     start(x1,y1)
 
 
-def aumento():
+def increase():
     global cu,x,y,u,m,up
     up=1
     i=0
@@ -223,14 +229,14 @@ def uP():
     global up
     up=0
     
-def comprobar():
+def test():
     i=0
     while i < 11:
         if raix+i in range(x[0],x[0]+10) and raiy+i in range(y[0],y[0]+10):
             rainbowC()
 
         i+=1
-    root.after(100-2*(len(x)-1),comprobar)
+    root.after(100-2*(len(x)-1),test)
 
 def move():
     global x,y,z,q,xt,yt,bu,p,m,power
@@ -343,9 +349,9 @@ cu[0]=can1.create_rectangle(x[0],y[0],x[0]+10,y[0]+10,fill='green',outline='gree
 
 start(x1,y1)
 
-arbre(450,100)
-arbre(470,400)
-arbre(150,500)
+tree(450,100)
+tree(470,400)
+tree(150,500)
  
 root.bind('<Up>',movA)
 root.bind('<Down>',movB)
@@ -353,6 +359,6 @@ root.bind('<Left>',movI)
 root.bind('<Right>',movD)
 
 root.after(randrange(10000,30000),rainbowI)
-comprobar()
+test()
 
 root.mainloop()
