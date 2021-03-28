@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """
+@author: Yago Iglesias
+
 Determinant calculator
 
 This calculator can operate
