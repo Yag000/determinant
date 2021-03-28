@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@author: Yago
+@author: Yago Iglesias
 
 This calculator can calculate then results of the Punnet's charts
 of the desired amount of traits.
