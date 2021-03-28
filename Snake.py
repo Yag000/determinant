@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Tkinter is needed
-@author: Yago
+@author: Yago Iglesias
 """
 
 from tkinter import *
